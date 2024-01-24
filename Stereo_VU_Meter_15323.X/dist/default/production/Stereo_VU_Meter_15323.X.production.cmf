@@ -1,0 +1,788 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/12seg_VU_meter-rev1.o
+data STRCODE 0 7FD 7FD 3 2 1
+ResetVec CODE 0 0 0 25D 2 1
+udata_bank0 BANK0 1 20 20 11 1 1
+udata_shr COMMON 1 70 70 10 1 1
+config CONFIG 4 8007 8007 5 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 31-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+BANK0 31-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+CONST 25D-7FC 2
+ENTRY 25D-7FC 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+SFR32 1000-106F 1
+SFR33 1080-10EF 1
+SFR34 1100-116F 1
+SFR35 1180-11EF 1
+SFR36 1200-126F 1
+SFR37 1280-12EF 1
+SFR38 1300-136F 1
+SFR39 1380-13EF 1
+SFR40 1400-146F 1
+SFR41 1480-14EF 1
+SFR42 1500-156F 1
+SFR43 1580-15EF 1
+SFR44 1600-166F 1
+SFR45 1680-16EF 1
+SFR46 1700-176F 1
+SFR47 1780-17EF 1
+SFR48 1800-186F 1
+SFR49 1880-18EF 1
+SFR50 1900-196F 1
+SFR51 1980-19EF 1
+SFR52 1A00-1A6F 1
+SFR53 1A80-1AEF 1
+SFR54 1B00-1B6F 1
+SFR55 1B80-1BEF 1
+SFR56 1C00-1C6F 1
+SFR57 1C80-1CEF 1
+SFR58 1D00-1D6F 1
+SFR59 1D80-1DEF 1
+SFR60 1E00-1E6F 1
+SFR61 1E80-1EEF 1
+SFR62 1F00-1F6F 1
+SFR63 1F80-1FEF 1
+CODE 25D-7FC 2
+SFR9 4BA-4EF 1
+BIGRAM 2000-20EF 1
+STRCODE 25D-7FC 2
+STRING 25D-7FC 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/12seg_VU_meter-rev1.o
+0 ResetVec CODE >342:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+0 ResetVec CODE >345:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1 ResetVec CODE >346:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2 ResetVec CODE >347:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3 ResetVec CODE >348:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4 ResetVec CODE >352:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4 ResetVec CODE >363:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5 ResetVec CODE >364:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6 ResetVec CODE >367:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7 ResetVec CODE >368:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8 ResetVec CODE >369:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9 ResetVec CODE >370:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A ResetVec CODE >371:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B ResetVec CODE >372:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C ResetVec CODE >373:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D ResetVec CODE >374:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E ResetVec CODE >375:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F ResetVec CODE >376:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10 ResetVec CODE >377:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11 ResetVec CODE >382:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12 ResetVec CODE >383:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13 ResetVec CODE >386:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14 ResetVec CODE >387:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15 ResetVec CODE >388:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16 ResetVec CODE >389:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17 ResetVec CODE >390:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18 ResetVec CODE >391:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19 ResetVec CODE >393:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A ResetVec CODE >394:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B ResetVec CODE >395:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C ResetVec CODE >396:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D ResetVec CODE >397:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E ResetVec CODE >398:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F ResetVec CODE >399:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20 ResetVec CODE >402:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21 ResetVec CODE >403:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22 ResetVec CODE >404:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23 ResetVec CODE >405:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24 ResetVec CODE >406:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+25 ResetVec CODE >407:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+26 ResetVec CODE >409:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+27 ResetVec CODE >410:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+28 ResetVec CODE >411:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+29 ResetVec CODE >412:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2A ResetVec CODE >413:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2B ResetVec CODE >414:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2C ResetVec CODE >416:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2D ResetVec CODE >419:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2E ResetVec CODE >420:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+2F ResetVec CODE >421:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+30 ResetVec CODE >427:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+31 ResetVec CODE >428:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+32 ResetVec CODE >430:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+33 ResetVec CODE >431:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+34 ResetVec CODE >432:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+35 ResetVec CODE >434:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+36 ResetVec CODE >435:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+37 ResetVec CODE >436:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+38 ResetVec CODE >437:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+39 ResetVec CODE >438:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3A ResetVec CODE >440:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3B ResetVec CODE >443:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3C ResetVec CODE >444:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3D ResetVec CODE >445:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3E ResetVec CODE >447:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+3F ResetVec CODE >448:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+40 ResetVec CODE >449:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+41 ResetVec CODE >450:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+42 ResetVec CODE >451:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+43 ResetVec CODE >453:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+44 ResetVec CODE >454:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+45 ResetVec CODE >462:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+46 ResetVec CODE >463:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+47 ResetVec CODE >464:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+48 ResetVec CODE >465:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+49 ResetVec CODE >466:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4A ResetVec CODE >467:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4B ResetVec CODE >468:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4C ResetVec CODE >470:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4D ResetVec CODE >471:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4E ResetVec CODE >472:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+4F ResetVec CODE >473:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+50 ResetVec CODE >475:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+51 ResetVec CODE >476:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+52 ResetVec CODE >477:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+53 ResetVec CODE >478:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+54 ResetVec CODE >479:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+55 ResetVec CODE >480:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+56 ResetVec CODE >481:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+57 ResetVec CODE >482:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+58 ResetVec CODE >483:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+59 ResetVec CODE >484:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5A ResetVec CODE >485:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5B ResetVec CODE >486:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5C ResetVec CODE >488:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5D ResetVec CODE >489:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5E ResetVec CODE >493:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+5F ResetVec CODE >494:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+60 ResetVec CODE >495:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+61 ResetVec CODE >497:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+62 ResetVec CODE >498:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+63 ResetVec CODE >500:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+64 ResetVec CODE >504:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+65 ResetVec CODE >509:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+66 ResetVec CODE >510:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+67 ResetVec CODE >511:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+68 ResetVec CODE >512:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+69 ResetVec CODE >515:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6A ResetVec CODE >516:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6B ResetVec CODE >517:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6C ResetVec CODE >518:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6D ResetVec CODE >519:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6E ResetVec CODE >520:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+6F ResetVec CODE >521:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+70 ResetVec CODE >522:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+71 ResetVec CODE >523:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+72 ResetVec CODE >525:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+73 ResetVec CODE >526:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+74 ResetVec CODE >527:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+75 ResetVec CODE >528:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+76 ResetVec CODE >529:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+77 ResetVec CODE >530:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+78 ResetVec CODE >532:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+79 ResetVec CODE >533:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7A ResetVec CODE >534:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7B ResetVec CODE >536:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7C ResetVec CODE >537:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7D ResetVec CODE >538:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7E ResetVec CODE >540:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+7F ResetVec CODE >541:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+80 ResetVec CODE >542:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+81 ResetVec CODE >543:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+82 ResetVec CODE >544:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+83 ResetVec CODE >545:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+84 ResetVec CODE >546:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+85 ResetVec CODE >547:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+86 ResetVec CODE >550:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+87 ResetVec CODE >551:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+88 ResetVec CODE >552:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+89 ResetVec CODE >553:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8A ResetVec CODE >554:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8B ResetVec CODE >555:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8C ResetVec CODE >556:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8D ResetVec CODE >557:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8E ResetVec CODE >558:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+8F ResetVec CODE >560:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+90 ResetVec CODE >561:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+91 ResetVec CODE >562:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+92 ResetVec CODE >563:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+93 ResetVec CODE >564:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+94 ResetVec CODE >565:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+95 ResetVec CODE >567:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+96 ResetVec CODE >568:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+97 ResetVec CODE >569:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+98 ResetVec CODE >571:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+99 ResetVec CODE >572:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9A ResetVec CODE >573:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9B ResetVec CODE >575:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9C ResetVec CODE >576:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9D ResetVec CODE >577:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9E ResetVec CODE >578:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+9F ResetVec CODE >579:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A0 ResetVec CODE >580:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A1 ResetVec CODE >581:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A2 ResetVec CODE >582:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A3 ResetVec CODE >584:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A4 ResetVec CODE >590:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A5 ResetVec CODE >591:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A6 ResetVec CODE >592:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A7 ResetVec CODE >593:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A8 ResetVec CODE >594:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+A9 ResetVec CODE >597:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AA ResetVec CODE >598:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AB ResetVec CODE >599:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AC ResetVec CODE >600:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AD ResetVec CODE >601:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AE ResetVec CODE >604:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+AF ResetVec CODE >605:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B0 ResetVec CODE >606:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B1 ResetVec CODE >607:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B2 ResetVec CODE >608:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B3 ResetVec CODE >610:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B4 ResetVec CODE >616:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B5 ResetVec CODE >617:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B6 ResetVec CODE >618:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B7 ResetVec CODE >619:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B8 ResetVec CODE >621:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+B9 ResetVec CODE >622:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BA ResetVec CODE >623:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BB ResetVec CODE >624:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BC ResetVec CODE >625:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BD ResetVec CODE >628:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BE ResetVec CODE >629:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+BF ResetVec CODE >630:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C0 ResetVec CODE >631:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C1 ResetVec CODE >633:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C2 ResetVec CODE >634:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C3 ResetVec CODE >635:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C4 ResetVec CODE >636:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C5 ResetVec CODE >639:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C6 ResetVec CODE >640:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C7 ResetVec CODE >641:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C8 ResetVec CODE >642:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+C9 ResetVec CODE >644:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CA ResetVec CODE >645:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CB ResetVec CODE >646:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CC ResetVec CODE >647:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CD ResetVec CODE >654:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CE ResetVec CODE >657:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+CF ResetVec CODE >658:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D0 ResetVec CODE >659:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D1 ResetVec CODE >660:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D2 ResetVec CODE >667:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D3 ResetVec CODE >668:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D4 ResetVec CODE >669:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D5 ResetVec CODE >679:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D6 ResetVec CODE >680:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D7 ResetVec CODE >681:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D8 ResetVec CODE >682:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+D9 ResetVec CODE >683:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DA ResetVec CODE >684:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DB ResetVec CODE >685:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DC ResetVec CODE >686:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DD ResetVec CODE >687:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DE ResetVec CODE >696:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+DF ResetVec CODE >697:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E0 ResetVec CODE >698:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E1 ResetVec CODE >704:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E2 ResetVec CODE >711:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E3 ResetVec CODE >712:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E4 ResetVec CODE >713:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E5 ResetVec CODE >714:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E6 ResetVec CODE >715:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E7 ResetVec CODE >718:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E8 ResetVec CODE >719:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+E9 ResetVec CODE >720:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+EA ResetVec CODE >723:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+EB ResetVec CODE >724:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+EC ResetVec CODE >725:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+ED ResetVec CODE >735:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+EE ResetVec CODE >736:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+EF ResetVec CODE >737:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F0 ResetVec CODE >738:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F1 ResetVec CODE >740:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F2 ResetVec CODE >741:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F3 ResetVec CODE >743:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F4 ResetVec CODE >744:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F5 ResetVec CODE >745:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F6 ResetVec CODE >749:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F7 ResetVec CODE >750:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F8 ResetVec CODE >752:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+F9 ResetVec CODE >753:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FA ResetVec CODE >759:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FB ResetVec CODE >760:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FC ResetVec CODE >761:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FD ResetVec CODE >763:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FE ResetVec CODE >764:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+FF ResetVec CODE >766:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+100 ResetVec CODE >768:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+101 ResetVec CODE >769:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+102 ResetVec CODE >770:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+103 ResetVec CODE >776:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+104 ResetVec CODE >778:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+105 ResetVec CODE >779:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+106 ResetVec CODE >780:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+107 ResetVec CODE >781:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+108 ResetVec CODE >782:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+109 ResetVec CODE >784:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10A ResetVec CODE >785:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10B ResetVec CODE >786:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10C ResetVec CODE >787:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10D ResetVec CODE >788:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10E ResetVec CODE >789:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+10F ResetVec CODE >791:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+110 ResetVec CODE >792:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+111 ResetVec CODE >794:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+112 ResetVec CODE >795:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+113 ResetVec CODE >796:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+114 ResetVec CODE >797:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+115 ResetVec CODE >798:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+116 ResetVec CODE >799:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+117 ResetVec CODE >800:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+118 ResetVec CODE >802:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+119 ResetVec CODE >803:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11A ResetVec CODE >805:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11B ResetVec CODE >806:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11C ResetVec CODE >807:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11D ResetVec CODE >808:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11E ResetVec CODE >809:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+11F ResetVec CODE >810:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+120 ResetVec CODE >812:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+121 ResetVec CODE >818:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+122 ResetVec CODE >819:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+123 ResetVec CODE >820:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+124 ResetVec CODE >821:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+125 ResetVec CODE >826:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+126 ResetVec CODE >828:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+127 ResetVec CODE >829:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+128 ResetVec CODE >830:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+129 ResetVec CODE >831:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12A ResetVec CODE >832:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12B ResetVec CODE >833:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12C ResetVec CODE >834:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12D ResetVec CODE >836:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12E ResetVec CODE >837:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+12F ResetVec CODE >838:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+130 ResetVec CODE >840:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+131 ResetVec CODE >841:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+132 ResetVec CODE >842:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+133 ResetVec CODE >843:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+134 ResetVec CODE >846:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+135 ResetVec CODE >847:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+136 ResetVec CODE >848:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+137 ResetVec CODE >849:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+138 ResetVec CODE >850:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+139 ResetVec CODE >851:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13A ResetVec CODE >852:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13B ResetVec CODE >854:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13C ResetVec CODE >855:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13D ResetVec CODE >856:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13E ResetVec CODE >857:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+13F ResetVec CODE >858:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+140 ResetVec CODE >859:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+141 ResetVec CODE >860:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+142 ResetVec CODE >861:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+143 ResetVec CODE >863:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+144 ResetVec CODE >864:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+145 ResetVec CODE >865:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+146 ResetVec CODE >866:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+147 ResetVec CODE >871:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+148 ResetVec CODE >872:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+149 ResetVec CODE >873:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14A ResetVec CODE >880:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14B ResetVec CODE >881:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14C ResetVec CODE >882:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14D ResetVec CODE >883:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14E ResetVec CODE >884:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+14F ResetVec CODE >885:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+150 ResetVec CODE >888:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+151 ResetVec CODE >894:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+152 ResetVec CODE >902:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+153 ResetVec CODE >903:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+154 ResetVec CODE >904:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+155 ResetVec CODE >905:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+156 ResetVec CODE >906:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+157 ResetVec CODE >907:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+158 ResetVec CODE >908:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+159 ResetVec CODE >909:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15A ResetVec CODE >911:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15B ResetVec CODE >913:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15C ResetVec CODE >914:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15D ResetVec CODE >915:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15E ResetVec CODE >916:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+15F ResetVec CODE >917:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+160 ResetVec CODE >919:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+161 ResetVec CODE >920:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+162 ResetVec CODE >922:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+163 ResetVec CODE >923:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+164 ResetVec CODE >924:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+165 ResetVec CODE >925:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+166 ResetVec CODE >927:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+167 ResetVec CODE >928:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+168 ResetVec CODE >929:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+169 ResetVec CODE >930:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16A ResetVec CODE >932:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16B ResetVec CODE >934:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16C ResetVec CODE >935:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16D ResetVec CODE >936:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16E ResetVec CODE >938:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+16F ResetVec CODE >939:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+170 ResetVec CODE >942:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+171 ResetVec CODE >943:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+172 ResetVec CODE >944:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+173 ResetVec CODE >945:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+174 ResetVec CODE >946:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+175 ResetVec CODE >947:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+176 ResetVec CODE >948:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+177 ResetVec CODE >949:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+178 ResetVec CODE >951:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+179 ResetVec CODE >953:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17A ResetVec CODE >954:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17B ResetVec CODE >955:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17C ResetVec CODE >956:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17D ResetVec CODE >957:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17E ResetVec CODE >959:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+17F ResetVec CODE >960:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+180 ResetVec CODE >962:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+181 ResetVec CODE >963:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+182 ResetVec CODE >964:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+183 ResetVec CODE >965:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+184 ResetVec CODE >967:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+185 ResetVec CODE >968:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+186 ResetVec CODE >969:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+187 ResetVec CODE >970:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+188 ResetVec CODE >972:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+189 ResetVec CODE >974:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18A ResetVec CODE >975:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18B ResetVec CODE >976:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18C ResetVec CODE >978:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18D ResetVec CODE >979:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18E ResetVec CODE >982:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+18F ResetVec CODE >988:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+190 ResetVec CODE >989:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+191 ResetVec CODE >990:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+192 ResetVec CODE >991:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+193 ResetVec CODE >999:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+194 ResetVec CODE >1001:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+195 ResetVec CODE >1002:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+196 ResetVec CODE >1003:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+197 ResetVec CODE >1005:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+198 ResetVec CODE >1006:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+199 ResetVec CODE >1008:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19A ResetVec CODE >1009:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19B ResetVec CODE >1010:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19C ResetVec CODE >1011:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19D ResetVec CODE >1012:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19E ResetVec CODE >1013:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+19F ResetVec CODE >1015:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A0 ResetVec CODE >1065:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A1 ResetVec CODE >1066:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A2 ResetVec CODE >1067:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A3 ResetVec CODE >1068:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A4 ResetVec CODE >1069:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A5 ResetVec CODE >1070:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A6 ResetVec CODE >1071:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A7 ResetVec CODE >1072:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A8 ResetVec CODE >1073:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1A9 ResetVec CODE >1074:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AA ResetVec CODE >1075:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AB ResetVec CODE >1076:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AC ResetVec CODE >1102:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AD ResetVec CODE >1103:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AE ResetVec CODE >1104:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1AF ResetVec CODE >1105:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B0 ResetVec CODE >1106:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B1 ResetVec CODE >1107:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B2 ResetVec CODE >1108:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B3 ResetVec CODE >1109:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B4 ResetVec CODE >1110:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B5 ResetVec CODE >1114:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B6 ResetVec CODE >1115:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B7 ResetVec CODE >1116:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B8 ResetVec CODE >1117:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1B9 ResetVec CODE >1118:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BA ResetVec CODE >1119:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BB ResetVec CODE >1121:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BC ResetVec CODE >1122:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BD ResetVec CODE >1123:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BE ResetVec CODE >1124:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1BF ResetVec CODE >1125:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C0 ResetVec CODE >1129:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C1 ResetVec CODE >1130:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C2 ResetVec CODE >1131:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C3 ResetVec CODE >1132:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C4 ResetVec CODE >1133:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C5 ResetVec CODE >1134:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C6 ResetVec CODE >1136:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C7 ResetVec CODE >1137:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C8 ResetVec CODE >1138:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1C9 ResetVec CODE >1139:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CA ResetVec CODE >1140:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CB ResetVec CODE >1144:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CC ResetVec CODE >1145:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CD ResetVec CODE >1146:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CE ResetVec CODE >1147:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1CF ResetVec CODE >1148:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D0 ResetVec CODE >1150:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D1 ResetVec CODE >1151:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D2 ResetVec CODE >1152:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D3 ResetVec CODE >1153:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D4 ResetVec CODE >1154:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D5 ResetVec CODE >1157:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D6 ResetVec CODE >1158:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D7 ResetVec CODE >1159:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D8 ResetVec CODE >1161:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1D9 ResetVec CODE >1162:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DA ResetVec CODE >1163:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DB ResetVec CODE >1165:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DC ResetVec CODE >1166:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DD ResetVec CODE >1167:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DE ResetVec CODE >1168:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1DF ResetVec CODE >1170:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E0 ResetVec CODE >1171:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E1 ResetVec CODE >1172:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E2 ResetVec CODE >1174:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E3 ResetVec CODE >1177:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E4 ResetVec CODE >1178:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E5 ResetVec CODE >1179:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E6 ResetVec CODE >1180:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E7 ResetVec CODE >1181:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E8 ResetVec CODE >1182:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1E9 ResetVec CODE >1183:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1EA ResetVec CODE >1184:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1EB ResetVec CODE >1185:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1EC ResetVec CODE >1186:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1ED ResetVec CODE >1187:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1EE ResetVec CODE >1188:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1EF ResetVec CODE >1189:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F0 ResetVec CODE >1190:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F1 ResetVec CODE >1191:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F2 ResetVec CODE >1194:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F3 ResetVec CODE >1195:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F4 ResetVec CODE >1196:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F5 ResetVec CODE >1197:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F6 ResetVec CODE >1198:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F7 ResetVec CODE >1199:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F8 ResetVec CODE >1200:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1F9 ResetVec CODE >1201:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FA ResetVec CODE >1202:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FB ResetVec CODE >1203:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FC ResetVec CODE >1204:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FD ResetVec CODE >1205:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FE ResetVec CODE >1206:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+1FF ResetVec CODE >1207:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+200 ResetVec CODE >1208:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+201 ResetVec CODE >1211:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+202 ResetVec CODE >1212:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+203 ResetVec CODE >1213:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+204 ResetVec CODE >1214:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+205 ResetVec CODE >1215:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+206 ResetVec CODE >1216:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+207 ResetVec CODE >1217:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+208 ResetVec CODE >1218:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+209 ResetVec CODE >1219:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20A ResetVec CODE >1220:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20B ResetVec CODE >1221:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20C ResetVec CODE >1222:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20D ResetVec CODE >1223:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20E ResetVec CODE >1224:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+20F ResetVec CODE >1225:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+210 ResetVec CODE >1228:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+211 ResetVec CODE >1229:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+212 ResetVec CODE >1230:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+213 ResetVec CODE >1231:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+214 ResetVec CODE >1232:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+215 ResetVec CODE >1233:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+216 ResetVec CODE >1234:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+217 ResetVec CODE >1235:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+218 ResetVec CODE >1236:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+219 ResetVec CODE >1237:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21A ResetVec CODE >1238:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21B ResetVec CODE >1239:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21C ResetVec CODE >1240:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21D ResetVec CODE >1241:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21E ResetVec CODE >1242:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+21F ResetVec CODE >1248:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+220 ResetVec CODE >1249:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+221 ResetVec CODE >1250:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+222 ResetVec CODE >1251:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+223 ResetVec CODE >1252:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+224 ResetVec CODE >1253:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+225 ResetVec CODE >1254:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+226 ResetVec CODE >1255:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+227 ResetVec CODE >1256:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+228 ResetVec CODE >1257:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+229 ResetVec CODE >1259:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22A ResetVec CODE >1260:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22B ResetVec CODE >1261:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22C ResetVec CODE >1262:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22D ResetVec CODE >1263:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22E ResetVec CODE >1265:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+22F ResetVec CODE >1266:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+230 ResetVec CODE >1267:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+231 ResetVec CODE >1268:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+232 ResetVec CODE >1269:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+233 ResetVec CODE >1270:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+234 ResetVec CODE >1272:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+235 ResetVec CODE >1279:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+236 ResetVec CODE >1280:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+237 ResetVec CODE >1281:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+238 ResetVec CODE >1282:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+239 ResetVec CODE >1283:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23A ResetVec CODE >1284:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23B ResetVec CODE >1285:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23C ResetVec CODE >1286:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23D ResetVec CODE >1287:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23E ResetVec CODE >1288:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+23F ResetVec CODE >1291:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+240 ResetVec CODE >1292:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+241 ResetVec CODE >1294:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+242 ResetVec CODE >1295:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+243 ResetVec CODE >1296:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+244 ResetVec CODE >1298:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+245 ResetVec CODE >1299:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+246 ResetVec CODE >1300:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+247 ResetVec CODE >1301:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+248 ResetVec CODE >1302:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+249 ResetVec CODE >1303:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24A ResetVec CODE >1305:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24B ResetVec CODE >1306:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24C ResetVec CODE >1308:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24D ResetVec CODE >1309:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24E ResetVec CODE >1310:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+24F ResetVec CODE >1311:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+250 ResetVec CODE >1312:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+251 ResetVec CODE >1314:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+252 ResetVec CODE >1316:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+253 ResetVec CODE >1320:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+254 ResetVec CODE >1321:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+255 ResetVec CODE >1322:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+256 ResetVec CODE >1323:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+257 ResetVec CODE >1324:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+258 ResetVec CODE >1325:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+259 ResetVec CODE >1326:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+25A ResetVec CODE >1327:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+25B ResetVec CODE >1328:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+25C ResetVec CODE >1329:/Users/akimitsu/Dropbox/Tech_Stuff/LED_Artist/-Active_Projects/Stereo_VU_Meter/-firmware/Stereo_VU_Meter_15323.X/12seg_VU_meter-rev1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 80 0 ABS 0 - -
+__Hspace_4 10013 0 ABS 0 - -
+__Hudata_bank0 0 0 ABS 0 udata_bank0 -
+__Hudata_bank1 0 0 ABS 0 udata_bank1 -
+__Hudata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata 0 0 ABS 0 udata -
+__Hconfig 10018 0 CONFIG 4 config -
+__Ludata 0 0 ABS 0 udata -
+ResetVector 0 0 CODE 0 ResetVec build/default/production/12seg_VU_meter-rev1.o
+__Hcode 0 0 ABS 0 code -
+__Hdata 0 0 ABS 0 data -
+__Lcode 0 0 ABS 0 code -
+__Ldata 0 0 ABS 0 data -
+__S0 800 0 ABS 0 - -
+__S1 80 0 ABS 0 - -
+__LResetVec 0 0 ABS 0 ResetVec -
+__Lconfig 0 0 CONFIG 4 config -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__HResetVec 0 0 ABS 0 ResetVec -
+__Ludata_bank0 0 0 ABS 0 udata_bank0 -
+__Ludata_bank1 0 0 ABS 0 udata_bank1 -
+__Ludata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata_shr 0 0 ABS 0 udata_shr -
+__Ludata_shr 0 0 ABS 0 udata_shr -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+data 0 7FD FFA 3 2
+udata_bank0 1 20 20 11 1
+udata_shr 1 70 70 10 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
