@@ -10,6 +10,8 @@
 ;	0.1A use all 10 bits of ADC results and sum in 16 bits
 ;	0.1B ADC input offset compensation (fixed value)
 ;	0.1C offset voltage calibration
+;	0.1D ADC reference voltage changed to 2.048V from 1.024V
+;	1.0	Production version
 ;
 ;	[To Do]
 ;	- needs better way to enter offset calibration
@@ -101,12 +103,12 @@ OFFSET_L		equ		10						; default ADC offset compensation value
 OFFSET_R		equ		10						; default ADC offset compensation value
 
 ;--- timebase --------------------------------------------------------
-TMR0_POSTSCALE	equ		2						; 256 / (systick_us / timer0_pr)
-SYS_TICK_MS		equ		8						; main loop duration in milliseconds
+SYSTICK_INC		equ		2						; 256 / (systick_us / timer0_pr)
+SYSTICK_MS		equ		8						; main loop duration in milliseconds
 DECAY_SPEED		equ		64						; peak hold decay speed
-SCAN_STEPS		equ		NUM_LEDS+2				; extra above NUM_LEDS will display peak levels
+SCAN_STEPS		equ		NUM_OF_LED+2			; extra above NUM_OF_LED will display peak levels
 												; ADC samples will accumulate (value x SCAN_STEPS/2)
-CONFIG_SAVE_DLY	equ		(2040/SYS_TICK_MS)		; config save delay in system ticks (MAX:2040, zero disables config save)
+CONFIG_SAVE_DLY	equ		(2040/SYSTICK_MS)		; config save delay in system ticks (MAX:2040, zero disables config save)
 
 ;--- VU level steps/scales -------------------------------------------
 ;* uncomment one of the following VU step scales *
@@ -139,8 +141,8 @@ BTN2_ANS		equ		ANSELA
 BTN2_WPU		equ		WPUA					; needs pull-up
 BTN2_PIN		equ		1
 
-BTN_DEB_CNT		equ		(56/(SYS_TICK_MS))		; button debounce count
-BTN_HOLD_CNT	equ		(2000/(SYS_TICK_MS))	; button switch hold time
+BTN_DEB_CNT		equ		(56/(SYSTICK_MS))		; button debounce count
+BTN_HOLD_CNT	equ		(2000/(SYSTICK_MS))		; button switch hold time
 
 ;--- LEDs ------------------------------------------------------------
 LED1_LAT		equ		LATA
@@ -162,7 +164,7 @@ LED8_LAT		equ		LATC
 LED8_PIN		equ		2 ; 1
 
 ;-- LED level indicator matrix ---
-NUM_LEDS		equ		12
+NUM_OF_LED		equ		12
 
 ; TRISx/LATx set/mask bits to clear all LEDs
 LED_CLR_TRIA	equ		(1<<LED1_PIN)|(1<<LED2_PIN)|(1<<LED3_PIN)|(1<<LED4_PIN)
@@ -318,15 +320,16 @@ PSECT	udata_shr
 	adc_peak_L:			DS	1			; peak value L
 	adc_peak_R:			DS	1			; peak value R
 
-	bar_level1:			DS	1			; level indicator bar level (0 - NUM_LEDS)
-	bar_level2:			DS	1			; level indicator bar level (0 - NUM_LEDS)
+	bar_level1:			DS	1			; level indicator bar level (0 - NUM_OF_LED)
+	bar_level2:			DS	1			; level indicator bar level (0 - NUM_OF_LED)
 
-	adc_value:			DS	1			; ADC value to convert to steps
-	vu_work:			DS	1			; VU level work
-	vu_level_L:			DS	1			; VU level (0 - NUM_LEDS) used by LED driver
-	vu_level_R:			DS	1			; VU level (0 - NUM_LEDS) used by LED driver
-	peak_level_L:		DS	1			; Peak level (0 - NUM_LEDS) used by LED driver
-	peak_level_R:		DS	1			; Peak level (0 - NUM_LEDS) used by LED driver
+	analog_val:			DS	1			; analog value to be converted to step levels
+	vu_level:			DS	1			; VU level (0 - NUM_OF_LED) converted
+
+	vu_level_L:			DS	1			; VU level (0 - NUM_OF_LED) used by LED driver
+	vu_level_R:			DS	1			; VU level (0 - NUM_OF_LED) used by LED driver
+	peak_level_L:		DS	1			; Peak level (0 - NUM_OF_LED) used by LED driver
+	peak_level_R:		DS	1			; Peak level (0 - NUM_OF_LED) used by LED driver
 	scan_step:			DS	1			; used by LED driver
 
 	_ram_end_:
@@ -367,7 +370,7 @@ IsrVec:
 				btfss	PEAK_DISP				; if (PEAK_DISP == 1)
 				bra		peak_disp_skip
 				movf	scan_step,W				; and if (scan_step > NUM_LED)
-				sublw	NUM_LEDS
+				sublw	NUM_OF_LED
 				btfsc	CARRY
 				bra		peak_disp_skip			; {
 				movf	peak_level_L,W			;   bar_level1 = peak_level_L
@@ -517,9 +520,9 @@ no_calibration:
 				subwf	adc_result_L,F
 				clrw
 				subwfb	adc_result_LH,F
-				btfss	adc_result_LH,7			;   if (adc_result_LH < 0)
+				btfsc	CARRY					;   if (adc_result_LH < 0)
 				bra		adc_not_neg_L			;   {
-				clrw							;     adc_value = adc_result_L:H = 0
+				clrw							;     analog_val = adc_result_L:H = 0
 				bra		adc_neg_L
 adc_not_neg_L:									;   }
 				lsrf	adc_result_LH,F			;   adc_result_L:H>>2
@@ -527,21 +530,21 @@ adc_not_neg_L:									;   }
 				lsrf	adc_result_LH,F			;   Zero flag set/cleared here
 				rrf		adc_result_L,W
 				btfss	ZERO					;   if (adc_result_LH != 0)
-				movlw	0xFF					;     adc_value = 0xFF (adc_result overflow)
+				movlw	0xFF					;     analog_val = 0xFF (adc_result overflow)
 adc_neg_L:
-				movwf	adc_value
+				movwf	analog_val
 				clrf	adc_result_L			;   clear adc_result_L
 				clrf	adc_result_LH
 
 				call	VU_convert_steps		;   convert to steps
-				movf	vu_work,W				;   vu_level_L = vu_work
+				movf	vu_level,W				;   vu_level_L = vu_level
 				movwf	vu_level_L
 				;--- update peak level: L ---
-				movf	adc_value,W
-				subwf	adc_peak_L,W			;   compare adc_value : adc_peak
-				btfsc	CARRY					;   if (adc_peak < adc_value)
+				movf	analog_val,W
+				subwf	adc_peak_L,W			;   compare analog_val : adc_peak
+				btfsc	CARRY					;   if (adc_peak < analog_val)
 				bra		peak_skip_L				;   {
-				movf	adc_value,W				;     adc_peak_L = adc_value
+				movf	analog_val,W			;     adc_peak_L = analog_val
 				movwf	adc_peak_L
 				banksel	decay_timer_L
 				clrf	decay_timer_L			;     decay_timer_L = 0
@@ -552,9 +555,9 @@ peak_skip_L:									;   }
 				subwf	adc_result_R,F
 				clrw
 				subwfb	adc_result_RH,F
-				btfss	adc_result_RH,7			;   if (adc_result_RH < 0)
+				btfsc	CARRY					;   if (adc_result_RH < 0)
 				bra		adc_not_neg_R			;   {
-				clrw							;     adc_value = adc_result_R:H = 0
+				clrw							;     analog_val = adc_result_R:H = 0
 				bra		adc_neg_R
 adc_not_neg_R:									;   }
 				lsrf	adc_result_RH,F			;   adc_result_R:H>>2
@@ -562,21 +565,21 @@ adc_not_neg_R:									;   }
 				lsrf	adc_result_RH,F			;   Zero flag set/cleared here
 				rrf		adc_result_R,W
 				btfss	ZERO					;   if (adc_result_RH != 0)
-				movlw	0xFF					;     adc_value = 0xFF (adc_result overflow)
+				movlw	0xFF					;     analog_val = 0xFF (adc_result overflow)
 adc_neg_R:
-				movwf	adc_value
+				movwf	analog_val
 				clrf	adc_result_R			;   clear adc_result_R
 				clrf	adc_result_RH
 
 				call	VU_convert_steps		;   convert to steps
-				movf	vu_work,W				;   vu_level_R = vu_work
+				movf	vu_level,W				;   vu_level_R = vu_level
 				movwf	vu_level_R
 				;--- update peak level: R ---
-				movf	adc_value,W
-				subwf	adc_peak_R,W			;   compare adc_value : adc_peak
-				btfsc	CARRY					;   if (adc_peak < adc_value)
+				movf	analog_val,W
+				subwf	adc_peak_R,W			;   compare analog_val : adc_peak
+				btfsc	CARRY					;   if (adc_peak < analog_val)
 				bra		peak_skip_R				;   {
-				movf	adc_value,W				;     adc_peak_R = adc_value
+				movf	analog_val,W			;     adc_peak_R = analog_val
 				movwf	adc_peak_R
 				banksel	decay_timer_R
 				clrf	decay_timer_R			;     decay_timer_R = 0
@@ -595,16 +598,16 @@ LED_scan_cont2:									; } else
 
 				;--- convert peak level: L ---
 				movf	adc_peak_L,W
-				movwf	adc_value
+				movwf	analog_val
 				call	VU_convert_steps		;   convert to steps
-				movf	vu_work,W				;   peak_level_L = vu_work
+				movf	vu_level,W				;   peak_level_L = vu_level
 				movwf	peak_level_L
 
 				;--- convert peak level: R ---
 				movf	adc_peak_R,W
-				movwf	adc_value
+				movwf	analog_val
 				call	VU_convert_steps		;   convert to steps
-				movf	vu_work,W				;   peak_level_R = vu_work
+				movf	vu_level,W				;   peak_level_R = vu_level
 				movwf	peak_level_R
 
 				bra		LED_scan_cont4
@@ -613,7 +616,7 @@ LED_scan_cont3:									; } else
 
 				;-----------------------------------------------------
 
-				movlw	NUM_LEDS				; if (scan_step == NUM_LEDS)
+				movlw	NUM_OF_LED				; if (scan_step == NUM_OF_LED)
 				subwf	scan_step,W
 				btfss	ZERO
 				bra		peak_decay_skip
@@ -654,8 +657,8 @@ LED_scan_cont4:
 				incf	scan_step,F				; scan_step++
 
 				;--- take care of systick ----------------------------
-				movlw	TMR0_POSTSCALE
-				addwf	systick,F				; if ((systick += TMR0_POSTSCALE) > 255)
+				movlw	SYSTICK_INC
+				addwf	systick,F				; if ((systick += SYSTICK_INC) > 255)
 				btfsc	CARRY					; 
 				bsf		SYSTICK					;   set tick overflow flag (every 8.192 ms)
 
@@ -732,13 +735,11 @@ next_ram:		clrf	INDF0					; clear memory using indirect addressing
 				;-----------------------------------------------------
 				; configure ADC
 														; FVR voltage = 1.024 V (FVRCON.ADFVR = 01), (FVRCON.FVREN = 1)
-				movlw	(01B<<FVRCON_ADFVR0_POSN)|(1<<FVRCON_FVREN_POSN)
+;				movlw	(01B<<FVRCON_ADFVR0_POSN)|(1<<FVRCON_FVREN_POSN)
+														; FVR voltage = 2.048 V (FVRCON.ADFVR = 10), (FVRCON.FVREN = 1)
+				movlw	(10B<<FVRCON_ADFVR0_POSN)|(1<<FVRCON_FVREN_POSN)
 				banksel	FVRCON
 				movwf	FVRCON
-				clrwdt
-fvr_wait:
-				btfss	FVRRDY							; wait for FVR ready
-				bra		fvr_wait
 														; set ADC input -> VU_IN_L_AIN, turn on ADC
 				movlw	(VU_IN_L_AIN<<ADCON0_CHS0_POSN)|ADCON0_ADON_MASK
 				banksel	ADCON0
@@ -782,7 +783,7 @@ startup_loop:
 				call	drive_LED_bar
 
 				banksel	bar_level_temp
-				movlw	NUM_LEDS						; if (bar_level_temp < NUM_LEDS)
+				movlw	NUM_OF_LED						; if (bar_level_temp < NUM_OF_LED)
 				subwf	bar_level_temp,W
 				btfsc	CARRY
 				bra		startup_done					; {
@@ -834,8 +835,18 @@ mainloop:
 				call	config_save_set					;   set config save timer
 btn1_no_push:											; }
 				banksel	bflags
+				btfss	BTN1_HELD						; if button1 held
+				bra		btn1_no_held					; {
+				bsf		LED_NO_UPD						;   pause LED update
+				movlw	1								;   turn on LEDs at segment 1
+				movwf	bar_level1
+				movwf	bar_level2
+				call	drive_LED_bar
+btn1_no_held:											; }
+				banksel	bflags
 				btfss	BTN1_LPUSH						; if button1 long pushed
 				bra		btn1_no_lpush					; {
+				bcf		LED_NO_UPD						;   resume LED update
 														;   toggle reverse display
 				movlw	((1<<LED_REV_L_POS)|(1<<LED_REV_R_POS))
 				xorwf	gflags,F
@@ -855,7 +866,7 @@ btn2_no_push:											; }
 				btfss	BTN2_HELD						; if button2 held
 				bra		btn2_no_held					; {
 				bsf		LED_NO_UPD						;   pause LED update
-				movlw	1								;   turn on LEDs at segment 1
+				movlw	12								;   turn on LEDs at segment 12
 				movwf	bar_level1
 				movwf	bar_level2
 				call	drive_LED_bar
@@ -864,11 +875,9 @@ btn2_no_held:											; }
 				btfss	BTN2_LPUSH						; if button2 long pushed
 				bra		btn2_no_lpush					; {
 				bcf		LED_NO_UPD						;   resume LED update
-
-;				movlw	(1<<CH_FLIP_POS)				;   toggle L/R flip display
-;				xorwf	gflags,F
-
-				bsf		OFFSET_CAL						;   start offset calibration
+				movlw	(1<<CH_FLIP_POS)				;   toggle L/R flip display
+				xorwf	gflags,F
+;				bsf		OFFSET_CAL						;   start offset calibration
 				bcf		BTN2_LPUSH						;   clear long push flag
 				call	config_save_set					;   set config save timer
 btn2_no_lpush:											; }
@@ -993,8 +1002,8 @@ config_save_set:
 
 				;-----------------------------------------------------
 				; voltage -> display step conversion
-				;   call;   adc_value: value to convert
-				;   return; vu_work: LED index
+				;   call;   analog_val: value to convert
+				;   return; vu_level: LED index
 VU_convert_steps:
 				movlw	HIGH(VU_step_lookup)|0x80	; setup FSR0 for lookup
 													; set the 7th bit for program memory access
@@ -1002,15 +1011,15 @@ VU_convert_steps:
 				movlw	LOW(VU_step_lookup)
 				movwf	FSR0L
 
-				movlw	NUM_LEDS					; vu_work = NUM_LEDS
-				movwf	vu_work
+				movlw	NUM_OF_LED					; vu_level = NUM_OF_LED
+				movwf	vu_level
 VU_convert_loop:									; do {
 				moviw	FSR0++						;   load lookup data -> W
-				subwf	adc_value,W					;   if (adc_value >= threshold)
+				subwf	analog_val,W				;   if (analog_val >= threshold)
 				btfsc	CARRY
 				bra		VU_convert_done				;     break
-				decfsz	vu_work,F					; 
-				bra		VU_convert_loop				; } while (--vu_work != 0)
+				decfsz	vu_level,F					; 
+				bra		VU_convert_loop				; } while (--vu_level != 0)
 VU_convert_done:
 				return
 
@@ -1111,32 +1120,32 @@ drive_LED_bar:
 no_ch_flip:										; }
 
 				;--- verify bar_level1 ---
-				movf	bar_level1,W			; if (bar_level1 > NUM_LEDS)
-				sublw	NUM_LEDS
+				movf	bar_level1,W			; if (bar_level1 > NUM_OF_LED)
+				sublw	NUM_OF_LED
 				btfsc	CARRY
 				bra		bar_level1_ok			; {
-				movlw	NUM_LEDS				;   bar_level1 = NUM_LEDS
+				movlw	NUM_OF_LED				;   bar_level1 = NUM_OF_LED
 				movwf	bar_level1
 bar_level1_ok:									; }
 				btfss	LED_REV_L				; if (LED reverse flag on)
 				bra		bar_level1_done			; {
-				movf	bar_level1,W			;   bar_level = (NUM_LEDS+1) - bar_level
-				sublw	NUM_LEDS+1
+				movf	bar_level1,W			;   bar_level = (NUM_OF_LED+1) - bar_level
+				sublw	NUM_OF_LED+1
 				movwf	bar_level1				; }
 bar_level1_done:
 
 				;--- verify bar_level2 ---
-				movf	bar_level2,W			; if (bar_level2 > NUM_LEDS)
-				sublw	NUM_LEDS
+				movf	bar_level2,W			; if (bar_level2 > NUM_OF_LED)
+				sublw	NUM_OF_LED
 				btfsc	CARRY
 				bra		bar_level2_ok			; {
-				movlw	NUM_LEDS				;   bar_level2 = NUM_LEDS
+				movlw	NUM_OF_LED				;   bar_level2 = NUM_OF_LED
 				movwf	bar_level2
 bar_level2_ok:									; }
 				btfss	LED_REV_R				; if (LED reverse flag on)
 				bra		bar_level2_done			; {
-				movf	bar_level2,W			;   bar_level = (NUM_LEDS+1) - bar_level
-				sublw	NUM_LEDS+1
+				movf	bar_level2,W			;   bar_level = (NUM_OF_LED+1) - bar_level
+				sublw	NUM_OF_LED+1
 				movwf	bar_level2				; }
 bar_level2_done:
 
