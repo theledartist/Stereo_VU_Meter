@@ -8,11 +8,11 @@
 
 ### Memory Usage ###
  Intel Hex-file ranges:
-  0h - 4B9h		(dist/default/production/Stereo_VU_Meter_15323.X.production.hex)
+  0h - 4C7h		(dist/default/production/Stereo_VU_Meter_15323.X.production.hex)
   FFAh - FFFh		(dist/default/production/Stereo_VU_Meter_15323.X.production.hex)
   1000Eh - 10017h		(dist/default/production/Stereo_VU_Meter_15323.X.production.hex)
  Unused ranges:
-  4BAh - FF9h
+  4C8h - FF9h
   1000h - 1000Dh
 
 ### Hex Memory Map ###
@@ -97,7 +97,8 @@
 00000480 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000490 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000004A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000004B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+000004B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000004C0 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00000FF0 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------

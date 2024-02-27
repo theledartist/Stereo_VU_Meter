@@ -6,7 +6,7 @@ Linker command line:
   --edf=/Users/akimitsu/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.23.382/xc8/pic/dat/20231128175859_en.msgs \
   -cs -h+dist/default/production/Stereo_VU_Meter_15323.X.production.sym \
   --cmf=dist/default/production/Stereo_VU_Meter_15323.X.production.cmf -z \
-  -Q16F15323 -o/tmp/xcypCzApr --fixupoverflow=error \
+  -Q16F15323 -o/tmp/xcJcDjTKR --fixupoverflow=error \
   -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
   -Mdist/default/production/Stereo_VU_Meter_15323.X.production.map -E1 \
   --acfsm=1493 -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
@@ -48,14 +48,14 @@ Machine type is 16F15323
                 Name                               Link     Load   Length Selector   Space Scale
 build/default/production/12seg_VU_meter-rev1.o
                 config                             8007     8007        5        0       4
-                ResetVec                              0        0      25D        0       0
+                ResetVec                              0        0      264        0       0
                 data                                7FD      7FD        3      FFA       0
                 udata_bank0                          20       20       11       20       1
                 udata_shr                            70       70       10       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
-                ResetVec                              0        0      25D         0
+                ResetVec                              0        0      264         0
 
         CLASS   STRCODE        
                 data                                7FD      7FD        3         0
@@ -231,9 +231,9 @@ UNUSED ADDRESS RANGES
         BANK1            000A0-000EF              50           1
         BANK2            00120-0016F              50           1
         BIGRAM           02000-020EF              F0           1
-        CODE             0025D-007FC             5A0           2
-        CONST            0025D-007FC             100           2
-        ENTRY            0025D-007FC             100           2
+        CODE             00264-007FC             599           2
+        CONST            00264-007FC             100           2
+        ENTRY            00264-007FC             100           2
         IDLOC            08000-08003               4           2
         RAM              00031-0006F              3F           1
                          000A0-000EF              50
@@ -292,9 +292,9 @@ UNUSED ADDRESS RANGES
         SFR61            01E80-01EEF              70           1
         SFR62            01F00-01F6F              70           1
         SFR63            01F80-01FEF              70           1
-        SFR9             004BA-004EF              36           1
-        STRCODE          0025D-007FC             5A0           2
-        STRING           0025D-007FC             100           2
+        SFR9             004C8-004EF              28           1
+        STRCODE          00264-007FC             599           2
+        STRING           00264-007FC             100           2
 
                                   Symbol Table
 
